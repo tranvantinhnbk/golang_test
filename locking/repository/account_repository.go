@@ -42,7 +42,7 @@ func (r *AccountRepository) CreateAccount(ctx context.Context, username string, 
 		tx.Rollback()
 		return nil, nil
 	}
-	if err != nil && !errors.Is(err, gorm.ErrRecordNotFound) {
+	if !errors.Is(err, gorm.ErrRecordNotFound) {
 		tx.Rollback()
 		return nil, fmt.Errorf("failed to check existing account: %w", err)
 	}
