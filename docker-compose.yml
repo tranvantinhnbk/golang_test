@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_password
+      POSTGRES_DB: testdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  
+  bytebase:
+    image: bytebase/bytebase:3.5.1
+    container_name: bytebase
+    ports:
+      - "8080:8080"
+    volumes:
+      - ~/.bytebase/data:/var/opt/bytebase
+    environment:
+      - BB_DB_PATH=/var/opt/bytebase/db
+    restart: unless-stopped
+    init: true
+
+volumes:
+  postgres_data: {}
