@@ -1,0 +1,7 @@
+go 1.24.1
+
+use (
+	.
+	./create_module_test/greetings
+	./create_module_test/hello
+)
