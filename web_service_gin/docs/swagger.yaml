@@ -1,0 +1,23 @@
+basePath: /
+host: localhost:8080
+info:
+  contact: {}
+  description: A simple API using Gin and Swagger
+  title: Example Web Service API
+  version: "1.0"
+paths:
+  /api/users:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              type: string
+            type: array
+      summary: Get Users
+      tags:
+      - users
+swagger: "2.0"
