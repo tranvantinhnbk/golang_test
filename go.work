@@ -6,4 +6,5 @@ use (
 	./create_module_test/hello
 	./web_service_gin
 	./goroutine
+	./reflection
 )
