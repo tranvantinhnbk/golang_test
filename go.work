@@ -7,4 +7,5 @@ use (
 	./web_service_gin
 	./goroutine
 	./reflection
+	./pointer_receiver
 )
