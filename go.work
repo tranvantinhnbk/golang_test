@@ -9,4 +9,5 @@ use (
 	./reflection
 	./pointer_receiver
 	./interfaces
+	./generic
 )
