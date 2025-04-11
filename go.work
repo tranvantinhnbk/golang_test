@@ -8,4 +8,5 @@ use (
 	./goroutine
 	./reflection
 	./pointer_receiver
+	./interfaces
 )
