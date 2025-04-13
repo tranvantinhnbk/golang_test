@@ -10,4 +10,6 @@ use (
 	./pointer_receiver
 	./interfaces
 	./generic
+	./defer
+	./mutex
 )
