@@ -11,5 +11,7 @@ use (
 	./interfaces
 	./generic
 	./defer
-	./mutex
+	./race_condition_strategy/mutex
+	./race_condition_strategy/RWmutex
+	./race_condition_strategy/atomic
 )
