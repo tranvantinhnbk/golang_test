@@ -15,4 +15,5 @@ use (
 	./race_condition_strategy/RWmutex
 	./race_condition_strategy/atomic
 	./type_conversion
+	./socket
 )
