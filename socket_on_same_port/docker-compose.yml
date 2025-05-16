@@ -1,0 +1,17 @@
+
+services:
+  server:
+    build: .
+
+    ## RUN GO application here
+    command: go run server.go
+    
+    container_name: server
+
+  client:
+    build: .
+    container_name: client
+    ## RUN GO application here
+    command: go run server.go
+    depends_on:
+      - server
