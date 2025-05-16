@@ -12,6 +12,6 @@ services:
     build: .
     container_name: client
     ## RUN GO application here
-    command: go run server.go
+    command: go run client.go
     depends_on:
       - server
