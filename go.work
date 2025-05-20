@@ -17,4 +17,5 @@ use (
 	./type_conversion
 	./socket
 	./deadlock
+	./socket_on_same_port
 )

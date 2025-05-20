@@ -33,7 +33,7 @@ func udpClient() {
 	defer conn.Close()
 
 	for {
-		msg := fmt.Sprintf("Hello UDP at %v", time.Now().Unix())
+		msg := fmt.Sprintf("Hello UDP at %v \n", time.Now().Unix())
 		_, err := conn.Write([]byte(msg))
 		if err != nil {
 			fmt.Println("UDP send error:", err)
@@ -67,7 +67,7 @@ func tcpClient() {
 	fmt.Printf("Connected to %s from %s\n", remoteAddr, localAddr)
 
 	for {
-		msg := fmt.Sprintf("Hello TCP at %v", time.Now().Unix())
+		msg := fmt.Sprintf("Hello TCP at %v \n", time.Now().Unix())
 		_, err := conn.Write([]byte(msg))
 		if err != nil {
 			fmt.Println("TCP send error:", err)

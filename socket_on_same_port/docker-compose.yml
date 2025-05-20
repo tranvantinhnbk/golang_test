@@ -2,16 +2,15 @@
 services:
   server:
     build: .
-
+    container_name: server
     ## RUN GO application here
     command: go run server.go
     
-    container_name: server
-
   client:
     build: .
-    container_name: client
     ## RUN GO application here
     command: go run client.go
+    deploy:
+      replicas: 2
     depends_on:
       - server
