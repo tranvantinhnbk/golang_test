@@ -30,16 +30,19 @@ func udpClient() {
 		fmt.Println("UDP dial:", err)
 		return
 	}
+
 	defer conn.Close()
 
 	for {
-		msg := fmt.Sprintf("Hello UDP at %v \n", time.Now().Unix())
+		msg := fmt.Sprintf("Hello UDP at %v ", time.Now().Unix())
 		_, err := conn.Write([]byte(msg))
 		if err != nil {
 			fmt.Println("UDP send error:", err)
 			return
 		}
+
 		fmt.Println("Sent UDP:", msg)
+
 		time.Sleep(interval)
 	}
 }

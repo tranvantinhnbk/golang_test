@@ -46,7 +46,7 @@ func tcpListener() {
 	}
 	defer ln.Close()
 
-	fmt.Printf("TCP listener up on %s:%s\n", host, port)
+	fmt.Printf("TCP listener up on %s:%s \n", host, port)
 
 	for {
 		conn, err := ln.Accept()
@@ -65,7 +65,7 @@ func handleTCPClient(conn net.Conn) {
 
 	for scanner.Scan() {
 		msg := scanner.Text()
-		fmt.Printf("TCP/%s from %s\n", msg, addr)
+		fmt.Printf("TCP/%s from %s \n", msg, addr)
 	}
 
 	if err := scanner.Err(); err != nil {
