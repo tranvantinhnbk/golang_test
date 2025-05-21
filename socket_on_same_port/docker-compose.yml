@@ -3,14 +3,38 @@ services:
   server:
     build: .
     container_name: server
-    ## RUN GO application here
     command: go run server.go
-    
-  client:
+    networks:
+      mynet:
+        ipv4_address: 172.25.0.12
+  client1:
     build: .
-    ## RUN GO application here
-    command: go run client.go
-    deploy:
-      replicas: 2
+    container_name: client1
+    command: sh -c "ip addr add 172.25.0.100/16 dev eth0 && go run client.go"
+    cap_add:
+      - NET_ADMIN
     depends_on:
       - server
+    
+    networks:
+      mynet:
+        ipv4_address: 172.25.0.10
+
+  client2:
+    build: .
+    container_name: client2
+    command: sh -c "ip addr add 172.25.0.101/16 dev eth0 && go run client.go"
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - server
+  
+    networks:
+      mynet:
+        ipv4_address: 172.25.0.11
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
