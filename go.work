@@ -18,4 +18,5 @@ use (
 	./socket
 	./deadlock
 	./socket_on_same_port
+	./file_descriptor
 )
