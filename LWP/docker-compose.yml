@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  lwp-demo:
+    build: .
+    container_name: lwp-demo
+    tty: true
